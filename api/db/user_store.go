@@ -12,7 +12,7 @@ import (
 
 type UserStore interface {
 	PostUser(context.Context, *types.User) (*types.User, error)
-	GetUser(context.Context, string) (*types.User, error)
+	GetUserByID(context.Context, string) (*types.User, error)
 }
 
 type MongoUserStore struct {

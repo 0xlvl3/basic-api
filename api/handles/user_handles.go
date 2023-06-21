@@ -36,7 +36,7 @@ func (h *UserHandler) HandlePostUser(c *fiber.Ctx) error {
 func (h *UserHandler) HandleGetUserByID(c *fiber.Ctx) error {
 	id := c.Params("id")
 
-	user, err := h.userStore.GetUser(c.Context(), id)
+	user, err := h.userStore.GetUserByID(c.Context(), id)
 	if err != nil {
 		return err
 	}

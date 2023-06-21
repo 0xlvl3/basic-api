@@ -33,11 +33,11 @@ func main() {
 		api = app.Group("/api")
 
 		// handles
-		userHandler = handles.NewUserHandler()
+		userHandler = handles.NewUserHandler(userStore)
 	)
 
 	api.Post("/create", userHandler.HandlePostUser)
-	api.Get("/get/:id", userHandler.HandleGetUserByID)
+	api.Get("/user/:id", userHandler.HandleGetUserByID)
 
 	app.Listen(*lp)
 }
